@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="72">
     <author>Timo</author>
-    <version>1.0.0.0</version>
+    <version>1.0.2.0</version>
     <title>
         <en>Crop Brush</en>
-        <de>Feldfrucht-Pinsel</de>
-        <nl>Gewas Kwast</nl>
     </title>
     <description>
         <en><![CDATA[Paint crops onto your fields from the build menu, just like painting terrain.
@@ -18,14 +16,6 @@ Open the build menu -> Landscaping -> Paint. At the end of the list you find one
 - Tertiary action: plant the WHOLE field under the cursor
 
 Only works on land you own and only on field ground.]]></en>
-        <nl><![CDATA[Schilder gewassen op je velden vanuit het bouwmenu, net als terrein verven.
-
-Bouwmenu -> Landschapsbouw -> Verven. Aan het eind van de lijst staat per gewas een kwast plus "Gewas verwijderen".
-
-- Linkermuis (vasthouden): gewas schilderen
-- Muiswiel: kwastgrootte
-- Tweede actie: groeifase kiezen
-- Derde actie: HELE veld onder de cursor beplanten]]></nl>
     </description>
     <iconFilename>icon_cropBrush.dds</iconFilename>
     <multiplayer supported="true"/>

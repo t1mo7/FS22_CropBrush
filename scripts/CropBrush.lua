@@ -201,6 +201,8 @@ function CropBrush:onButtonTertiary()
     local fruitTypeIndex, growthState, fieldId = self.fruitTypeIndex, self:getGrowthState(), field.fieldId
     g_gui:showYesNoDialog({
         text = text,
+        yesText = "Yes",
+        noText = "No",
         callback = function(_, yes)
             if yes then
                 CropBrushEvent.sendRequest(CropBrushEvent.MODE_FIELD, fruitTypeIndex, growthState, 0, 0, 0, fieldId)

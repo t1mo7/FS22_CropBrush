@@ -23,12 +23,24 @@ function CropBrushUtil.getPlantableFruitTypes()
     return result
 end
 
+-- Crop names are always shown in English, whatever language the game runs in.
+CropBrushUtil.FRUIT_TITLES = {
+    WHEAT = "Wheat", BARLEY = "Barley", OAT = "Oat", CANOLA = "Canola", SORGHUM = "Sorghum",
+    SUNFLOWER = "Sunflower", SOYBEAN = "Soybean", MAIZE = "Corn", POTATO = "Potato",
+    SUGARBEET = "Sugar beet", SUGARCANE = "Sugarcane", COTTON = "Cotton", GRASS = "Grass",
+    OILSEEDRADISH = "Oilseed radish", POPLAR = "Poplar", OLIVE = "Olive", GRAPE = "Grape",
+    MEADOW = "Meadow"
+}
+
 function CropBrushUtil.getFruitTitle(fruitType)
-    local fillType = g_fruitTypeManager:getFillTypeByFruitTypeIndex(fruitType.index)
-    if fillType ~= nil and fillType.title ~= nil then
-        return fillType.title
+    local name = fruitType.name or "?"
+    local title = CropBrushUtil.FRUIT_TITLES[name:upper()]
+    if title ~= nil then
+        return title
     end
-    return fruitType.name
+    -- modded crops: "MY_CROP" -> "My crop"
+    title = name:lower():gsub("_", " ")
+    return (title:gsub("^%l", string.upper))
 end
 
 function CropBrushUtil.getFruitIcon(fruitType)
